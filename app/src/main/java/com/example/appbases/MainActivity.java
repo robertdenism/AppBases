@@ -1,13 +1,13 @@
 package com.example.appbases;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import java.util.List;
 
@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
-        userDao = db.ocioDAO();
+        userDao = db.userDao();
 
 
-        List<User> users = userDao.getAll();
+        //List<User> users = userDao.getAll();
 
         botonAniadir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         botonBorrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User u = new User();
-                userDao.delete(u);
+
+
 
             }
         });
